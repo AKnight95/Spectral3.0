@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personnages index{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('Css/personnages.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <h1>Personnages index</h1>
+    </br>
+    </br>
+
+    <section class="col-md-15">
+
+        <div class="row">
+
+            {% for personnage in personnages %}
+
+                <article>
+                    <h1>{{personnage.Nom}}</h1>
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+        
+
+    </section>
+
+    <a href="{{ path('app_personnages_new') }}">Create new</a>
+
+    <div class="navigation">
+        {{ knp_pagination_render(personnages) }}
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personnages2{% endblock %}
+
+{% block body %}
+    <h1>Personnages2</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ personnages2.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ personnages2.Nom }}</td>
+            </tr>
+            <tr>
+                <th>Histoire</th>
+                <td>{{ personnages2.Histoire }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_personnages2_index') }}">back to list</a>
+
+    <a href="{{ path('app_personnages2_edit', {'id': personnages2.id}) }}">edit</a>
+
+    {{ include('personnages2/_delete_form.html.twig') }}
+{% endblock %}

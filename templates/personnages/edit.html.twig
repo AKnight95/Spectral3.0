@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Personnages{% endblock %}
+
+{% block body %}
+    <h1>Edit Personnages</h1>
+
+    {{ include('personnages/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_personnages_index') }}">back to list</a>
+
+    {{ include('personnages/_delete_form.html.twig') }}
+{% endblock %}
